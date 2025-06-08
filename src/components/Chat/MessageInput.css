@@ -1,0 +1,110 @@
+
+/* src/components/Chat/MessageInput.css */
+
+.message-input-container {
+    padding: 1rem;
+    background: #ffffff; /* white */
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.message-input-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    background: #F9FAFB; /* gray-50 */
+    padding: 0.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.message-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    color: #4B5563; /* text-gray-600 */
+    outline: none;
+}
+
+.message-input::placeholder {
+    color: #9CA3AF; /* gray-400 */
+}
+
+.message-input:focus {
+    outline: none;
+}
+
+.send-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 12px;
+    background: #F43F5E; /* rose-500 */
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.send-button:disabled {
+    background: #E5E7EB; /* gray-200 */
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.send-button:not(:disabled):hover {
+    background: #E11D48; /* rose-600 */
+    transform: scale(1.05);
+}
+
+.send-icon {
+    font-size: 1.2rem;
+    color: white;
+}
+
+.spinner {
+    font-size: 1.2rem;
+    color: white;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+/* Efectos de hover y focus */
+.message-input-wrapper:focus-within {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    background: #ffffff; /* white */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .message-input-container {
+        padding: 0.8rem;
+    }
+
+    .message-input-wrapper {
+        padding: 0.4rem;
+    }
+
+    .message-input {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .send-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .send-icon,
+    .spinner {
+        font-size: 1rem;
+    }
+}
+

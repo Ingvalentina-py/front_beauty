@@ -1,0 +1,170 @@
+
+/* src/components/Chat/MessageList.css */
+
+.message-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.message-list.empty {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-message {
+    text-align: center;
+    color: #E11D48; /* rose-600 */
+    opacity: 0.7;
+}
+
+.empty-icon {
+    font-size: 3rem;
+    color: #F43F5E; /* rose-500 */
+    margin-bottom: 1rem;
+}
+
+.empty-message p {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    padding: 1rem;
+    border-radius: 12px;
+    position: relative;
+    animation: messageAppear 0.3s ease-out;
+}
+
+.message.user {
+    align-self: flex-end;
+    background: linear-gradient(135deg, #F43F5E, #E11D48); /* rose-500 → rose-600 */
+    color: #ffffff;
+    border-bottom-right-radius: 4px;
+}
+
+.message.assistant {
+    align-self: flex-start;
+    background: #ffffff;
+    color: #E11D48; /* rose-600 */
+    border-bottom-left-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.message-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.message-icon {
+    font-size: 1.2rem;
+}
+
+.user-icon {
+    color: #F43F5E; /* rose-500 */
+}
+
+.assistant-icon {
+    color: #F43F5E; /* rose-500 */
+}
+
+.message-sender {
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.message-content {
+    font-size: 1rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.message-timestamp {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    margin-top: 0.5rem;
+    text-align: right;
+}
+
+/* Animaciones */
+@keyframes messageAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efectos hover */
+.message:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
+.message.user:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.message.assistant:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .message {
+        max-width: 90%;
+        padding: 0.8rem;
+    }
+
+    .message-header {
+        margin-bottom: 0.3rem;
+    }
+
+    .message-icon {
+        font-size: 1rem;
+    }
+
+    .message-sender {
+        font-size: 0.8rem;
+    }
+
+    .message-content {
+        font-size: 0.9rem;
+    }
+
+    .message-timestamp {
+        font-size: 0.7rem;
+    }
+}
+
+/* Estilos para mensajes de error */
+.message.error {
+    background-color: #EF4444; /* red-500 */
+    color: #ffffff;
+    align-self: center;
+    text-align: center;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25%      { transform: translateX(-5px); }
+    75%      { transform: translateX(5px); }
+}
+

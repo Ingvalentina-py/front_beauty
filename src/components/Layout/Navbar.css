@@ -1,0 +1,132 @@
+
+/* src/components/Layout/Navbar.css */
+
+/* Convertimos el navbar en una barra lateral fija a la izquierda */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;                /* ancho de la barra lateral */
+    height: 100vh;               /* ocupa toda la altura */
+    background: linear-gradient(135deg, #fd7b91, #ec9cad);
+    display: flex;
+    flex-direction: column;      /* vertical */
+    padding: 1rem;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Contenedor interno para separar brand y menú */
+.navbar-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Brand arriba */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: transform 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.navbar-icon {
+    font-size: 1.8rem;
+    color: #f43f5e;
+}
+
+/* Menú en columna */
+.navbar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-grow: 1;               /* ocupa espacio restante */
+}
+
+/* Enlaces estilo botón en ancho completo */
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(4px);
+}
+
+.nav-icon {
+    font-size: 1.2rem;
+}
+
+/* Botón de acción (ej. Cerrar sesión) */
+.nav-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #ffbcc7;
+    color: #cf8091;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #ffffff;
+    transform: translateX(4px);
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Coloca el logout al fondo si quieres empujarlo */
+.navbar-button.logout-button {
+    margin-top: auto;
+}
+
+/* Responsive: en pantallas pequeñas vuelve a top bar */
+@media (max-width: 768px) {
+    .navbar {
+        position: static;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        padding: 1rem 0;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .navbar-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .navbar-brand {
+        margin-bottom: 0;
+    }
+    .navbar-menu {
+        flex-direction: row;
+        gap: 1rem;
+        margin-left: auto;
+    }
+    .nav-link, .nav-button {
+        padding: 0.5rem 1rem;
+    }
+}
+

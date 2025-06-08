@@ -1,0 +1,31 @@
+
+/* src/pages/ChatPage.css */
+
+.chat-page-container {
+    padding-top: 20px; /* Espacio si el Navbar es fijo o si quieres separación */
+}
+
+.loading-chat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    font-size: 1.2em;
+    color: #4B5563; /* text-gray-600 */
+}
+
+.chat-page-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.chat-page-header h1 {
+    font-size: 2em;
+    color: #111827; /* text-gray-900 */
+}
+
+.chat-page-header p {
+    font-size: 1.1em;
+    color: #4B5563; /* text-gray-600 */
+}
+
