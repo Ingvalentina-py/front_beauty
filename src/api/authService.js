@@ -28,12 +28,12 @@ export const register = async (username, email, password) => {
 };
 
 export const login = async (email, password) => {
-    const response = await apiClient.post('/api/auth/login', { email, password });
+    const response = await apiClient.post('/auth/login', { email, password });
     return response.data;
 };
 
 export const getProfile = async () => { // Opcional, si la usas en AuthContext
-    const response = await apiClient.get('/api/auth/profile');
+    const response = await apiClient.get('/auth/profile');
     return response.data;
 };
 
